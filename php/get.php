@@ -25,11 +25,11 @@ else
 
 $uploaddir = './data/';
 
-makeDownloadNamed($file, $uploaddir, "data.raw", "application/octet-stream");
+makeDownload($file, $uploaddir, "application/octet-stream");
 
-function makeDownloadNamed($file, $dir, $downdoadFileName, $type) {
+function makeDownload($file, $dir, $type) {
     header("Content-Type: $type");
-    header("Content-Disposition: attachment; filename=\"$downdoadFileName\"");
+    header("Content-Disposition: attachment; filename=\"$file\"");
     readfile($dir.$file);
 }
 

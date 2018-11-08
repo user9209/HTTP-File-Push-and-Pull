@@ -30,13 +30,9 @@ if($_FILES[$html_form_file_id]['size'] < 1)
 
 $old_file_array = scandir ( "./data/", SCANDIR_SORT_DESCENDING);
 
-// skip ".", ".." und ".htaccess"
-if($old_file_array && sizeof($old_file_array) > 3)
-  $num = intval($old_file_array[0]) + 1;
-else
-  $num = 1;
+$num = date ("Ymd-His");
 
-if($num > 100)
+if(sizeof($old_file_array) > 103)
   die("Number of uploads reached!");
 
 $uploaddir = './data/';

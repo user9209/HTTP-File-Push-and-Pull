@@ -35,6 +35,9 @@ public class HTTP_Download {
             // Read the response body.
             byte[] responseBody = method.getResponseBody(40960);
 
+           String filename = method.getResponseHeader("Content-Disposition").toString()
+                             .replaceAll("Content-Disposition: attachment; filename=\"(.*)\"","$1");
+
             if(responseBody == null || responseBody.length < 1)
             {
                 System.out.println("Download failed!");
@@ -42,7 +45,7 @@ public class HTTP_Download {
             else
             {
                 try {
-                    Files.write(Paths.get("demo.down.raw"), responseBody);
+                    Files.write(Paths.get(filename), responseBody);
                     System.out.println("Download correct!");
                 }
                 catch (IOException e)
