@@ -49,7 +49,16 @@ public class HTTP_Upload {
             byte[] responseBody = method.getResponseBody(40960);
 
             // May fail if binaries are send by the server!
-            System.out.println(new String(responseBody));
+            String bodyString = new String(responseBody);
+
+            if(bodyString.equals("true"))
+            {
+                System.out.println("Upload correct!");
+            }
+            else
+            {
+                System.out.println("Upload failed!\n" + bodyString);
+            }
 
         } catch (HttpException e) {
             System.err.println("Connection failed: " + e.getMessage());
