@@ -35,8 +35,8 @@ public class HTTP_Download {
             // Read the response body.
             byte[] responseBody = method.getResponseBody(40960);
 
-           String filename = method.getResponseHeader("Content-Disposition").toString()
-                             .replaceAll("Content-Disposition: attachment; filename=\"(.*)\"","$1");
+            String filename = method.getResponseHeader("Content-Disposition").toString()
+                              .replaceAll("Content-Disposition: attachment; filename=\"(.*)\"","$1");
 
             if(responseBody == null || responseBody.length < 1)
             {

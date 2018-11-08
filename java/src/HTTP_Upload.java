@@ -1,3 +1,6 @@
+package timebased;
+
+import org.apache.commons.httpclient.methods.multipart.StringPart;
 import org.apache.http.HttpStatus;
 import org.apache.commons.httpclient.DefaultHttpMethodRetryHandler;
 import org.apache.commons.httpclient.HttpClient;
@@ -18,7 +21,7 @@ public class HTTP_Upload {
     public static void main(String[] args) throws FileNotFoundException {
 
         // file to upload
-        File sendFile = new File("demo.txt");
+        File sendFile = new File("demo.raw");
 
         String httpInputName = "userfile";
 
@@ -30,7 +33,8 @@ public class HTTP_Upload {
 
         // add files
         Part[] parts = {
-                new FilePart(httpInputName, sendFile)
+                new StringPart("Content-Disposition", "attachment; filename=\"" + sendFile.getName() + "\""),
+                new FilePart(httpInputName, sendFile),
         };
 
         // enctype="multipart/form-data"
@@ -49,11 +53,13 @@ public class HTTP_Upload {
             byte[] responseBody = method.getResponseBody(40960);
 
             // May fail if binaries are send by the server!
-            String bodyString = new String(responseBody);
+            String bodyString = new String(responseBody).trim();
+
+            System.out.println(bodyString);
 
             if(bodyString.equals("true"))
             {
-                System.out.println("Upload correct!");
+                System.out.println("Upload \"" + sendFile.getName() + "\" correct!");
             }
             else
             {
