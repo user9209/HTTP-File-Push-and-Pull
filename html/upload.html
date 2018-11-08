@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+   <meta charset="utf-8"/>
+   <title>Upload files</title>
+ </head>
+ <body>
+   <center>
+   <br><br>
+   <h2>Upload files</h2>
+   <form method="post" action="upload.php?auth=<keyX>" 
+        enctype="multipart/form-data">
+     <input type="hidden" name="MAX_FILE_SIZE" value="10485760" />
+     <label>Please take a text file to upload:<br><br>
+     <input name="userfile" type="file" size="50" accept="text/*"> 
+   </label>
+   <br><br>
+   <button>Upload file</button>
+  </form>
+  </center>
+ </body>
+</html>
+
