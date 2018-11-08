@@ -38,7 +38,9 @@ Upload a file ([demo.txt](https://github.com/user9209/HTTP-File-Push-and-Pull/bl
 
 - [HTTP_Upload.java](https://github.com/user9209/HTTP-File-Push-and-Pull/blob/master/java/src/HTTP_Upload.java)
 
-  Update [url](https://github.com/user9209/HTTP-File-Push-and-Pull/blob/66fd236341cfeb45744dab1d41e542c4a82cace7/java/src/HTTP_Upload.java#L16) first!
+- [HTTP_Download.java](https://github.com/user9209/HTTP-File-Push-and-Pull/blob/master/java/src/HTTP_Download.java)
+
+  Update [url](https://github.com/user9209/HTTP-File-Push-and-Pull/blob/66fd236341cfeb45744dab1d41e542c4a82cace7/java/src/HTTP_Upload.java#L16), [url](https://github.com/user9209/HTTP-File-Push-and-Pull/blob/41cfc745d241659a5c32c745d1ccfcd9648aa399/java/src/HTTP_Download.java#L14) and [key](https://github.com/user9209/HTTP-File-Push-and-Pull/blob/41cfc745d241659a5c32c745d1ccfcd9648aa399/java/src/HTTP_Download.java#L25) first!
 
 Required libs:
 
@@ -47,4 +49,3 @@ Required libs:
 - [Apache Commons HttpClient](https://mvnrepository.com/artifact/commons-httpclient/commons-httpclient)
 - [Apache Commons Logging](https://mvnrepository.com/artifact/commons-logging/commons-logging)
 - [Apache Commons Codec](https://mvnrepository.com/artifact/commons-codec/commons-codec)
-
